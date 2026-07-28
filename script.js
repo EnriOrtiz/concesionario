@@ -348,49 +348,62 @@ function applyConfig() {
         const colorFondo = e.logo_color_fondo || c.primario;
         const colorTexto = e.logo_color_texto || '#ffffff';
         
-        if (tipo === 'imagen' && logoImagen) {
-            logoIcon.innerHTML = `<img src="${logoImagen}" alt="${e.nombre}" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">`;
-            logoIcon.style.background = 'white';
-        } else if (tipo === 'ambos' && logoImagen) {
+        if ((tipo === 'imagen' || tipo === 'ambos') && logoImagen) {
             logoIcon.innerHTML = `<img src="${logoImagen}" alt="${e.nombre}" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">`;
             logoIcon.style.background = 'white';
         } else {
-            logoIcon.innerHTML = logoTexto;s
+            logoIcon.innerHTML = logoTexto;
             logoIcon.style.background = `linear-gradient(135deg, ${colorFondo}, ${adjustColor(colorFondo, 30)})`;
             logoIcon.style.color = colorTexto;
         }
     }
     
-    document.getElementById('logoName').textContent = e.nombre || 'Premium Motors';
-    document.getElementById('logoSlogan').textContent = e.slogan || '';
+    // Nombre y slogan
+    const logoName = document.getElementById('logoName');
+    const logoSlogan = document.getElementById('logoSlogan');
+    if (logoName) logoName.textContent = e.nombre || 'Premium Motors';
+    if (logoSlogan) logoSlogan.textContent = e.slogan || '';
     
-    // Contacto
+    // Teléfono
     const phoneEl = document.getElementById('topPhone');
     if (phoneEl) {
         phoneEl.href = 'tel:' + (e.telefono_principal || '');
-        phoneEl.querySelector('span').textContent = e.telefono_principal || '';
+        const phoneSpan = phoneEl.querySelector('span');
+        if (phoneSpan) phoneSpan.textContent = e.telefono_principal || '';
     }
     
+    // Email
     const emailEl = document.getElementById('topEmail');
     if (emailEl) {
         emailEl.href = 'mailto:' + (e.email_contacto || '');
-        emailEl.querySelector('span').textContent = e.email_contacto || '';
+        const emailSpan = emailEl.querySelector('span');
+        if (emailSpan) emailSpan.textContent = e.email_contacto || '';
     }
     
+    // Horario
     const hoursEl = document.getElementById('topHours');
     if (hoursEl) {
-        hoursEl.querySelector('span').textContent = e.horario_semana || '';
+        const hoursSpan = hoursEl.querySelector('span');
+        if (hoursSpan) hoursSpan.textContent = e.horario_semana || '';
     }
     
     // Redes sociales
     const socialDiv = document.getElementById('topSocial');
     if (socialDiv && e.redes_sociales) {
         socialDiv.innerHTML = '';
-        Object.entries(e.redes_sociales).forEach(([red, url]) => {
-            if (url && url !== '#') {
-                socialDiv.innerHTML += `<a href="${url}" aria-label="${red}" target="_blank" rel="noopener"><i class="fab fa-${red}"></i></a>`;
-            }
-        });
+        const redes = e.redes_sociales;
+        if (redes.facebook) {
+            socialDiv.innerHTML += `<a href="${redes.facebook}" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>`;
+        }
+        if (redes.instagram) {
+            socialDiv.innerHTML += `<a href="${redes.instagram}" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>`;
+        }
+        if (redes.youtube) {
+            socialDiv.innerHTML += `<a href="${redes.youtube}" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>`;
+        }
+        if (redes.tiktok) {
+            socialDiv.innerHTML += `<a href="${redes.tiktok}" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>`;
+        }
     }
     
     // WhatsApp
@@ -404,13 +417,21 @@ function applyConfig() {
         ctaWhatsapp.href = `https://wa.me/${e.whatsapp}?text=${encodeURIComponent(e.whatsapp_mensaje || 'Hola')}`;
     }
     
-    // Secciones
+    // Secciones - CORREGIDO: verificar que CONFIG.secciones existe
     if (CONFIG.secciones) {
-        toggleSection('marcasStrip', CONFIG.secciones.barra_marcas);
-        toggleSection('searchSection', CONFIG.secciones.buscador_avanzado);
-        toggleSection('catalog', CONFIG.secciones.catalogo_vehiculos);
-        toggleSection('servicios', CONFIG.secciones.servicios);
-        toggleSection('ctaFinal', CONFIG.secciones.cta_final);
+        const secciones = CONFIG.secciones;
+        toggleSection('marcasStrip', secciones.barra_marcas);
+        toggleSection('searchSection', secciones.buscador_avanzado);
+        toggleSection('catalog', secciones.catalogo_vehiculos);
+        toggleSection('servicios', secciones.servicios);
+        toggleSection('ctaFinal', secciones.cta_final);
+    }
+}
+
+function toggleSection(id, show) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.style.display = (show !== false) ? '' : 'none';
     }
 }
 
