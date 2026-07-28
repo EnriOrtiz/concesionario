@@ -1,0 +1,225 @@
+{
+  "version": "2.0",
+  "empresa": {
+    "nombre": "Premium Motors",
+    "nombre_corto": "PM",
+    "slogan": "Excelencia en Movimiento",
+    "logo_tipo": "texto",
+    "logo_texto": "PM",
+    "logo_imagen": "",
+    "logo_color_fondo": "#1a365d",
+    "logo_color_texto": "#ffffff",
+    "descripcion_corta": "Concesionario líder en vehículos premium con más de 20 años de experiencia ofreciendo calidad y distinción.",
+    "descripcion_larga": "En Premium Motors nos dedicamos a ofrecer la mejor experiencia de compra de vehículos. Nuestro compromiso con la excelencia nos ha convertido en el concesionario de referencia en la región.",
+    "telefono_principal": "+58 424-1234567",
+    "telefono_secundario": "+58 281-1234567",
+    "email_contacto": "info@premiummotors.com",
+    "email_ventas": "ventas@premiummotors.com",
+    "direccion": "Av. Principal, Centro Comercial Premium, Nivel PB, Local 5, Ciudad",
+    "ciudad": "Puerto La Cruz",
+    "estado": "Anzoátegui",
+    "pais": "Venezuela",
+    "horario_semana": "Lunes a Viernes: 8:00 AM - 6:00 PM",
+    "horario_sabado": "Sábados: 9:00 AM - 2:00 PM",
+    "horario_domingo": "Domingos: Cerrado",
+    "whatsapp": "+584241234567",
+    "whatsapp_mensaje": "Hola, vi su página web y me gustaría recibir información sobre sus vehículos.",
+    "redes_sociales": {
+      "facebook": "https://facebook.com/premiummotors",
+      "instagram": "https://instagram.com/premiummotors",
+      "youtube": "https://youtube.com/@premiummotors",
+      "tiktok": "https://tiktok.com/@premiummotors",
+      "linkedin": "https://linkedin.com/company/premiummotors"
+    },
+    "seo": {
+      "titulo_sitio": "Premium Motors | Concesionario de Vehículos",
+      "meta_descripcion": "Concesionario Premium Motors - Venta de vehículos nuevos y de ocasión. Las mejores marcas, financiamiento y servicio técnico especializado.",
+      "meta_keywords": "concesionario, vehículos, carros, premium motors, financiamiento",
+      "favicon_emoji": "🚗"
+    }
+  },
+  "apariencia": {
+    "tema": "claro",
+    "colores": {
+      "primario": "#1a365d",
+      "primario_claro": "#2a4a7f",
+      "primario_oscuro": "#0f2440",
+      "secundario": "#c41e3a",
+      "secundario_claro": "#e53e3e",
+      "secundario_oscuro": "#9b1b30",
+      "acento": "#d4a853",
+      "acento_claro": "#e0c078",
+      "acento_oscuro": "#b8943a",
+      "fondo_principal": "#f8f9fb",
+      "fondo_tarjeta": "#ffffff",
+      "fondo_oscuro": "#1a202c",
+      "texto_principal": "#1a365d",
+      "texto_secundario": "#4a5568",
+      "texto_claro": "#a0aec0",
+      "texto_blanco": "#ffffff",
+      "borde": "#e2e8f0",
+      "borde_claro": "#edf2f7",
+      "exito": "#38a169",
+      "advertencia": "#d69e2e",
+      "error": "#e53e3e",
+      "info": "#3182ce"
+    },
+    "tipografia": {
+      "titulos": "'Playfair Display', Georgia, 'Times New Roman', serif",
+      "cuerpo": "'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
+      "tamaño_base": "16px",
+      "escala_titulos": "1.25"
+    },
+    "bordes_redondeados": "12px",
+    "sombra_tarjeta": "0 4px 20px rgba(0, 0, 0, 0.08)",
+    "sombra_elevada": "0 10px 40px rgba(0, 0, 0, 0.12)",
+    "transicion": "0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "marcas": [
+    {
+      "id": 1,
+      "nombre": "Toyota",
+      "descripcion": "Líder mundial en innovación automotriz, reconocida por su calidad, durabilidad y tecnología híbrida avanzada.",
+      "caracteristicas": ["Calidad Japonesa", "Alto Valor de Reventa", "Tecnología Híbrida", "5 Años de Garantía"],
+      "color_marca": "#ce0037",
+      "logo_url": "",
+      "sitio_web": "https://www.toyota.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Hyundai",
+      "descripcion": "Innovación y diseño vanguardista con la mejor garantía del mercado. Vehículos eficientes y tecnológicos.",
+      "caracteristicas": ["Garantía 5 Años", "Diseño Europeo", "Máxima Eficiencia", "Tecnología Smart"],
+      "color_marca": "#003469",
+      "logo_url": "",
+      "sitio_web": "https://www.hyundai.com"
+    }
+  ],
+  "vehiculos": [
+    {
+      "id": 1,
+      "marca_id": 1,
+      "marca": "Toyota",
+      "modelo": "Corolla Cross",
+      "version": "Hybrid XLE",
+      "año": 2024,
+      "precio": 35000,
+      "moneda": "USD",
+      "tipo": "suv",
+      "categoria": "SUV Compacta",
+      "combustible": "Híbrido",
+      "transmision": "Automática CVT",
+      "potencia": "170 CV",
+      "torque": "190 Nm",
+      "cilindrada": "1.8L",
+      "capacidad": "5 pasajeros",
+      "rendimiento": "22 km/L",
+      "garantia": "5 años / 100,000 km",
+      "colores_disponibles": ["Blanco Perlado", "Azul Metálico", "Rojo Emoción", "Gris Grafito"],
+      "destacado": true,
+      "nuevo": true,
+      "en_oferta": false,
+      "imagen_principal": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
+      "imagenes_adicionales": [],
+      "video_url": "",
+      "descripcion_corta": "El SUV híbrido perfecto para la ciudad y la aventura familiar.",
+      "descripcion_larga": "El Toyota Corolla Cross Hybrid XLE combina la legendaria confiabilidad de Toyota con la eficiencia de la tecnología híbrida de última generación. Su diseño aerodinámico, interior espacioso y equipamiento de seguridad Toyota Safety Sense lo convierten en la opción ideal para familias que buscan economía sin sacrificar estilo ni prestaciones."
+    },
+    {
+      "id": 2,
+      "marca_id": 2,
+      "marca": "Hyundai",
+      "modelo": "Tucson",
+      "version": "Limited AWD",
+      "año": 2024,
+      "precio": 38500,
+      "moneda": "USD",
+      "tipo": "suv",
+      "categoria": "SUV Mediana",
+      "combustible": "Gasolina",
+      "transmision": "Automática 8vel",
+      "potencia": "187 CV",
+      "torque": "241 Nm",
+      "cilindrada": "2.5L",
+      "capacidad": "5 pasajeros",
+      "rendimiento": "14 km/L",
+      "garantia": "5 años / 100,000 km",
+      "colores_disponibles": ["Negro Fantasma", "Plata Metálico", "Verde Amazonia", "Blanco Crema"],
+      "destacado": true,
+      "nuevo": true,
+      "en_oferta": true,
+      "precio_oferta": 35900,
+      "imagen_principal": "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
+      "imagenes_adicionales": [],
+      "video_url": "",
+      "descripcion_corta": "Diseño vanguardista y tecnología de punta en cada detalle.",
+      "descripcion_larga": "El Hyundai Tucson Limited AWD representa la evolución del diseño SUV. Con su distintiva firma lumínica LED, interior premium con pantalla panorámica de 10.25 pulgadas y sistema de tracción integral HTRAC, ofrece una experiencia de conducción superior en cualquier terreno. Incluye el paquete completo de asistencias a la conducción Hyundai SmartSense."
+    }
+  ],
+  "servicios": [
+    {
+      "id": 1,
+      "icono": "fa-hand-holding-dollar",
+      "titulo": "Financiamiento Flexible",
+      "descripcion": "Planes de pago personalizados con las mejores tasas del mercado. Cuotas fijas y aprobación rápida.",
+      "destacado": true
+    },
+    {
+      "id": 2,
+      "icono": "fa-wrench",
+      "titulo": "Taller Autorizado",
+      "descripcion": "Servicio técnico certificado con repuestos originales y técnicos especializados para todas las marcas.",
+      "destacado": true
+    },
+    {
+      "id": 3,
+      "icono": "fa-shield-halved",
+      "titulo": "Garantía Extendida",
+      "descripcion": "Protección adicional para tu tranquilidad. Cobertura completa por hasta 7 años en componentes principales.",
+      "destacado": false
+    },
+    {
+      "id": 4,
+      "icono": "fa-car-side",
+      "titulo": "Test Drive Programado",
+      "descripcion": "Prueba tu vehículo favorito sin compromiso. Agenda tu cita y te lo llevamos a donde estés.",
+      "destacado": true
+    },
+    {
+      "id": 5,
+      "icono": "fa-rotate-left",
+      "titulo": "Tasación Garantizada",
+      "descripcion": "Recibimos tu vehículo usado al mejor precio como parte de pago. Tasación inmediata y transparente.",
+      "destacado": false
+    },
+    {
+      "id": 6,
+      "icono": "fa-headset",
+      "titulo": "Atención Personalizada",
+      "descripcion": "Asesores expertos te guían en cada paso. Servicio post-venta y seguimiento continuo.",
+      "destacado": false
+    }
+  ],
+  "secciones": {
+    "hero_slider": true,
+    "barra_marcas": true,
+    "buscador_avanzado": true,
+    "catalogo_vehiculos": true,
+    "vehiculos_destacados": true,
+    "seccion_marcas": true,
+    "servicios": true,
+    "testimonios": false,
+    "blog_noticias": false,
+    "cta_whatsapp": true,
+    "cta_final": true,
+    "footer_completo": true
+  },
+  "testimonios": [],
+  "blog": [],
+  "integraciones": {
+    "google_analytics_id": "",
+    "facebook_pixel_id": "",
+    "google_maps_embed": "",
+    "chat_en_vivo": false
+  }
+}

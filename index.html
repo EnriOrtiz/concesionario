@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Concesionario de vehículos premium">
+    <meta name="theme-color" content="#1a365d">
+    <title>Premium Motors | Concesionario</title>
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon dinámico -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-car">
+                <i class="fas fa-car"></i>
+            </div>
+            <div class="loader-road">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <div class="container">
+            <div class="top-bar-inner">
+                <div class="top-bar-contact">
+                    <a href="tel:" id="topPhone" class="top-bar-link">
+                        <i class="fas fa-phone-alt"></i> <span></span>
+                    </a>
+                    <span class="top-bar-separator">|</span>
+                    <a href="mailto:" id="topEmail" class="top-bar-link">
+                        <i class="fas fa-envelope"></i> <span></span>
+                    </a>
+                    <span class="top-bar-separator">|</span>
+                    <span id="topHours" class="top-bar-info">
+                        <i class="fas fa-clock"></i> <span></span>
+                    </span>
+                </div>
+                <div class="top-bar-social" id="topSocial"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon" id="logoIcon">PM</div>
+                    <div class="logo-info">
+                        <span class="logo-name" id="logoName">Premium Motors</span>
+                        <span class="logo-tagline" id="logoSlogan">Excelencia en Movimiento</span>
+                    </div>
+                </a>
+
+                <nav class="nav">
+                    <ul class="nav-list" id="navList">
+                        <li><a href="#home" class="nav-link active">Inicio</a></li>
+                        <li><a href="#catalog" class="nav-link">Catálogo</a></li>
+                        <li><a href="#marcas" class="nav-link">Marcas</a></li>
+                        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+
+                    <div class="nav-actions">
+                        <button class="btn-icon" id="favToggle" aria-label="Guardados">
+                            <i class="fas fa-bookmark"></i>
+                            <span class="icon-badge" id="favCount" style="display:none;">0</span>
+                        </button>
+                        <a href="#contacto" class="btn btn-primary btn-nav">
+                            <i class="fab fa-whatsapp"></i> Cotizar
+                        </a>
+                        <button class="hamburger" id="hamburger" aria-label="Menú">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Slider -->
+        <section class="hero" id="home">
+            <div class="hero-slider" id="heroSlider"></div>
+            <div class="hero-controls">
+                <button class="hero-arrow hero-arrow-left" id="prevSlide" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="hero-dots" id="heroDots"></div>
+                <button class="hero-arrow hero-arrow-right" id="nextSlide" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="hero-scroll">
+                <span>Descubre más</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marcas Strip -->
+        <section class="brands-strip" id="marcasStrip">
+            <div class="container">
+                <div class="brands-strip-content" id="brandsStripContent"></div>
+            </div>
+        </section>
+
+        <!-- Búsqueda Avanzada -->
+        <section class="search-section" id="searchSection">
+            <div class="container">
+                <div class="search-card" data-aos="fade-up">
+                    <div class="search-header">
+                        <i class="fas fa-magnifying-glass"></i>
+                        <h2>Encuentra tu Vehículo Ideal</h2>
+                    </div>
+                    <form class="search-form" id="searchForm">
+                        <div class="search-field">
+                            <label>Marca</label>
+                            <select id="searchBrand"><option value="">Todas las marcas</option></select>
+                        </div>
+                        <div class="search-field">
+                            <label>Tipo</label>
+                            <select id="searchType"><option value="">Todos los tipos</option></select>
+                        </div>
+                        <div class="search-field">
+                            <label>Precio máximo</label>
+                            <select id="searchPrice"><option value="">Sin límite</option></select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-search">
+                            <i class="fas fa-search"></i> Buscar Vehículos
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catálogo -->
+        <section class="catalog-section" id="catalog">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <div>
+                        <span class="section-label">Catálogo Actualizado</span>
+                        <h2 class="section-title">Nuestros <span class="text-accent">Vehículos</span></h2>
+                        <p class="section-subtitle">Descubre nuestra selección de vehículos nuevos con las mejores condiciones</p>
+                    </div>
+                    <div class="filter-pills" id="filterPills">
+                        <button class="filter-pill active" data-filter="all">Todos</button>
+                    </div>
+                </div>
+                <div class="vehicles-grid" id="vehiclesGrid" data-aos="fade-up" data-aos-delay="100"></div>
+            </div>
+        </section>
+
+        <!-- Marcas Detalladas -->
+        <section class="marcas-section" id="marcas">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-label">Representamos</span>
+                    <h2 class="section-title">Nuestras <span class="text-accent">Marcas</span></h2>
+                </div>
+                <div class="marcas-grid" id="marcasGrid"></div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section class="servicios-section" id="servicios">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="section-label">¿Por qué elegirnos?</span>
+                    <h2 class="section-title">Nuestros <span class="text-accent">Servicios</span></h2>
+                </div>
+                <div class="servicios-grid" id="serviciosGrid"></div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section" id="ctaFinal">
+            <div class="container">
+                <div class="cta-card" data-aos="zoom-in">
+                    <div class="cta-content">
+                        <h2>¿Listo para estrenar?</h2>
+                        <p>Visítanos o contáctanos por WhatsApp. Te asesoramos sin compromiso.</p>
+                        <div class="cta-buttons">
+                            <a href="#contacto" class="btn btn-white">
+                                <i class="fas fa-map-marker-alt"></i> Visítanos
+                            </a>
+                            <a href="#" class="btn btn-whatsapp" id="ctaWhatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Escríbenos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-grid" id="footerGrid"></div>
+            <div class="footer-bottom" id="footerBottom"></div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-pulse"></span>
+    </a>
+
+    <!-- Modal Vehículo -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="vehicleModal"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
