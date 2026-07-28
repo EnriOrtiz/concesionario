@@ -435,13 +435,6 @@ function toggleSection(id, show) {
     }
 }
 
-function toggleSection(id, show) {
-    const el = document.getElementById(id);
-    if (el) {
-        el.style.display = show !== false ? '' : 'none';
-    }
-}
-
 // ===== RENDERIZADO =====
 function renderAll() {
     renderHeroSlider();
