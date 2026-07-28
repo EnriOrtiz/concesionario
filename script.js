@@ -8,6 +8,30 @@ let totalSlides = 0;
 let slideInterval = null;
 let savedVehicles = [];
 
+// ===== FUNCIÓN adjustColor =====
+function adjustColor(hex, percent) {
+    // Eliminar el # si existe
+    hex = hex.replace('#', '');
+    
+    // Convertir a RGB
+    let r = parseInt(hex.substring(0, 2), 16);
+    let g = parseInt(hex.substring(2, 4), 16);
+    let b = parseInt(hex.substring(4, 6), 16);
+    
+    // Ajustar
+    r = Math.min(255, Math.max(0, r + percent));
+    g = Math.min(255, Math.max(0, g + percent));
+    b = Math.min(255, Math.max(0, b + percent));
+    
+    // Convertir de vuelta a hex
+    const toHex = (n) => {
+        const h = n.toString(16);
+        return h.length === 1 ? '0' + h : h;
+    };
+    
+    return '#' + toHex(r) + toHex(g) + toHex(b);
+}
+
 // Inicializar savedVehicles de forma segura
 try {
     const saved = localStorage.getItem('savedVehicles');
@@ -35,30 +59,6 @@ function safeSetStorage(key, value) {
         console.warn('No se pudo guardar en localStorage:', e.message);
         return false;
     }
-}
-
-// ===== FUNCIÓN adjustColor (FALTABA) =====
-function adjustColor(hex, percent) {
-    // Eliminar el # si existe
-    hex = hex.replace('#', '');
-    
-    // Convertir a RGB
-    let r = parseInt(hex.substring(0, 2), 16);
-    let g = parseInt(hex.substring(2, 4), 16);
-    let b = parseInt(hex.substring(4, 6), 16);
-    
-    // Ajustar
-    r = Math.min(255, Math.max(0, r + percent));
-    g = Math.min(255, Math.max(0, g + percent));
-    b = Math.min(255, Math.max(0, b + percent));
-    
-    // Convertir de vuelta a hex
-    const toHex = (n) => {
-        const h = n.toString(16);
-        return h.length === 1 ? '0' + h : h;
-    };
-    
-    return '#' + toHex(r) + toHex(g) + toHex(b);
 }
 
 // ===== INICIALIZACIÓN =====
@@ -355,7 +355,7 @@ function applyConfig() {
             logoIcon.innerHTML = `<img src="${logoImagen}" alt="${e.nombre}" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">`;
             logoIcon.style.background = 'white';
         } else {
-            logoIcon.innerHTML = logoTexto;
+            logoIcon.innerHTML = logoTexto;s
             logoIcon.style.background = `linear-gradient(135deg, ${colorFondo}, ${adjustColor(colorFondo, 30)})`;
             logoIcon.style.color = colorTexto;
         }
