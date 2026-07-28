@@ -8,7 +8,7 @@ let totalSlides = 0;
 let slideInterval = null;
 let savedVehicles = [];
 
-// ===== FUNCIÓN adjustColor ====
+// ===== FUNCIÓN adjustColor =====
 function adjustColor(hex, percent) {
     // Eliminar el # si existe
     hex = hex.replace('#', '');
